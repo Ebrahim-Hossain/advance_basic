@@ -25,8 +25,8 @@ class _QuestionsText extends State<QuestionsScreen> {
 
           SizedBox(height: 20,),
 
-          TextStyle1(() {}, "Answer1"),
-          TextStyle1(() {}, "Answer2"),
+          TextStyle1(() {}, "Answer1 "),
+          TextStyle1(() {}, "Answer2 "),
           TextStyle1(() {}, "Answer3"),
           TextStyle1(() {}, "Answer4"),
         ],
