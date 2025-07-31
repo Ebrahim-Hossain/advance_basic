@@ -12,6 +12,7 @@ class QuestionsScreen extends StatefulWidget {
 
 class _QuestionsText extends State<QuestionsScreen> {
 
+  final currentQuestion = questions[0];
   final textStyle1 = TextStyle(
       fontSize: 40,
       color: Colors.white);
@@ -21,14 +22,14 @@ class _QuestionsText extends State<QuestionsScreen> {
     return SizedBox(width: double.infinity ,
     child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text("question: ${questions[0].question}",style: textStyle1),
+        children: [Text(currentQuestion.question,style: textStyle1),
 
           SizedBox(height: 20,),
 
-          TextStyle1(() {}, "Answer1 "),
-          TextStyle1(() {}, "Answer2 "),
-          TextStyle1(() {}, "Answer3"),
-          TextStyle1(() {}, "Answer4"),
+          TextStyle1(() {}, currentQuestion.answers[0]),
+          TextStyle1(() {}, currentQuestion.answers[1]),
+          TextStyle1(() {}, currentQuestion.answers[2]),
+          TextStyle1(() {}, currentQuestion.answers[3]),
         ],
       ),
      );
