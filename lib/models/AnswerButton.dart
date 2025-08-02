@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
- class TextStyle1 extends StatelessWidget {
-   const TextStyle1(this.onTap, this.text, {super.key});
+ class AnswerButton extends StatelessWidget {
+   const AnswerButton({super.key, required this.onTap, required this.text});
 
   final Function() onTap;
   final String text;
@@ -16,6 +16,6 @@ import 'package:flutter/material.dart';
                  horizontal: 25, vertical: 8),
              shape: RoundedRectangleBorder(borderRadius:
              BorderRadiusGeometry.circular(40))),
-         child: Text(text));
+         child: Text(text,textAlign: TextAlign.center,),);
    }
  }
