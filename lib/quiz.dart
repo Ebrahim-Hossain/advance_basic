@@ -29,6 +29,12 @@ class _QuizText extends State<Quiz> {
     }
   }
 
+  void restartQuiz() {
+    setState(() {
+      activeScreen = 'Starting-Screen';
+    });
+  }
+
   void changingScreen() {
     setState(() {
       activeScreen = 'Questions-Screen';
@@ -43,7 +49,10 @@ Widget build(context) {
       screenWidget = StartingScreen(changingScreen);
     }
     else if(activeScreen == 'Result-Screen'){
-    screenWidget = ResultScreen();
+    screenWidget = ResultScreen(
+      quizRestart: restartQuiz,
+      chosenAnswer: selectedAnswer,
+    );
   }
     else {screenWidget = QuestionsScreen(
       onSelectAnswer: selectedAnswerList,);}
