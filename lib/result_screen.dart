@@ -1,5 +1,6 @@
 import 'package:advance_basics/data/questions.dart';
 import 'package:flutter/material.dart';
+import 'models/questions_summary.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.quizRestart,required this.chosenAnswer});
@@ -32,17 +33,14 @@ class ResultScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [const  Text(
-                  'You answered x out of y questions correctly!',
+                  'You answered out of y questions correctly!',
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
               ),
                 const  SizedBox(height: 30,),
-                const  Text("scrolling text of ans and questions",style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),),
+                 Summary(summaryData: getSummaryData()),
                 const  SizedBox(height: 30,),
                 TextButton(onPressed: () { quizRestart(); }
                   ,style: TextButton.styleFrom(
